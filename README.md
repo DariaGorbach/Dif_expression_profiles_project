@@ -19,6 +19,9 @@
  - KEGGREST (sourse: http://bioconductor.org/packages/release/bioc/html/KEGGREST.html)
 ### Databases
  - KEGG.db (sourse: http://bioconductor.org/packages/release/data/annotation/html/KEGG.db.html)
+### Other tools 
+ - Phantasus (sourse: https://artyomovlab.wustl.edu/phantasus/)
+ - Pathview (sourse: https://pathview.uncc.edu/)
 
 ### Script description
 Diff_expression_script.Rmd - script for differential expression data analysis, using graph approach

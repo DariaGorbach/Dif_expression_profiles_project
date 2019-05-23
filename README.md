@@ -1,6 +1,7 @@
 # Dif_expression_profiles_project
 
 ## Project description
+
 ## Aims 
  - get acquainted with methods of processing the differential expression data (R based - Phantasus, Limma, KEGGgraph, Pathview)
  - develop a searching graph algorithm for key genes that initialize a differential expression profile change in the cell
@@ -19,15 +20,17 @@
 ### Databases
  - KEGG.db (sourse: http://bioconductor.org/packages/release/data/annotation/html/KEGG.db.html)
 
-
 ### Script description
 Diff_expression_script.Rmd - script for differential expression data analysis, using graph approach
 
 ## Results 
- We used real medical data from KSHV-infected cells (Kaposi's sarcoma-associated herpesvirus). All genes were intersected with KEGG database (KEGG.db) and, as a result, we obtained 143 pathways possibly related with KSHV. 
+ We used a real medical data from KSHV-infected cells (Kaposi's sarcoma-associated herpesvirus). All genes were intersected with KEGG database (KEGG.db) and, as a result, we obtained 143 pathways possibly related with KSHV. 
  We run our script and obtained a list of genes, significantly presented amoung all pathways. Top 6 most significant genes showed on the plot below.
  
 ![](https://github.com/DariaGorbach/Dif_expression_profiles_project/blob/master/Result_Rplot.png?raw=true)
+
+## Conclusion and future aims
+
 
 ## Bibliography
 1.	Gallaher, A. M., Das, S., Xiao, Z., Andresson, T., Kieffer-Kwon, P., Happel, C., & Ziegelbauer, J. (2013). Proteomic screening of human targets of viral microRNAs reveals functions associated with immune evasion and angiogenesis. PLoS Pathogens, 9(9), e1003584. 

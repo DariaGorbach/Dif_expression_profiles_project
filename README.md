@@ -23,7 +23,7 @@
 ### Script description
 
 ## Results 
-![] (https://github.com/DariaGorbach/Dif_expression_profiles_project/blob/master/Result_Rplot.png)
+![] (https://github.com/DariaGorbach/Dif_expression_profiles_project/blob/master/Result_Rplot.png?raw=true)
 
 ## Bibliography
 1.	Gallaher, A. M., Das, S., Xiao, Z., Andresson, T., Kieffer-Kwon, P., Happel, C., & Ziegelbauer, J. (2013). Proteomic screening of human targets of viral microRNAs reveals functions associated with immune evasion and angiogenesis. PLoS Pathogens, 9(9), e1003584. 

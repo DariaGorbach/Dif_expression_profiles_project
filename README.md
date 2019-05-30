@@ -1,4 +1,5 @@
-# Dif_expression_profiles_project
+# Identification of pathway genes triggered differential expression profile changes
+
 
 ## Project description
 

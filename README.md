@@ -2,7 +2,7 @@
 
 
 ## Project description
-Analysis of complex cellular pathways can be an issue. However, despite dozens of possible interconnections between genes in the pathway, it only requires to know the few key genes, that invokes changes in differential expression profile. In recent work we managed to find key genes that orcestrate early changes in differential expression during the Kaposi’s sarcoma-associated herpesvirus (KSHV) invasion. 
+Analysis of complex cellular pathways can be an issue. However, despite dozens of possible interconnections between genes in the pathway, it only requires to know the few key genes, that invokes changes in differential expression profile. In recent work we managed to find key genes that orchestrate early changes in differential expression during the Kaposi’s sarcoma-associated herpesvirus (KSHV) invasion. 
 
 ## Aims 
  - get acquainted with methods of processing the differential expression data (R based - Phantasus, Limma, KEGGgraph, Pathview)
@@ -10,6 +10,8 @@ Analysis of complex cellular pathways can be an issue. However, despite dozens o
  - analyze and prove a biological relevance for obtained results
  
 ## Methods
+We used the real clinical data from cells infected with KSHV - a table of differentially expressed genes, that was previously visualised and selected in the Phantasus software. Then, we intersected these genes with pathways from the KEGG ((Kyoto Encyclopedia of Genes and Genomes) database, to choose only that  pathways, that contain genes of interest. 
+
 
 ### Data
 1) experiment.xlsx - table of differentially expressed genes (threshold: p_value < 0.05)

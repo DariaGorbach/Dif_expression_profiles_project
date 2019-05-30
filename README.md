@@ -11,7 +11,7 @@ Analysis of complex cellular pathways can be an issue. However, despite dozens o
  
 ## Methods
 We used the real clinical data from cells infected with KSHV - a table of differentially expressed genes, that was previously visualised and selected in the Phantasus software. Then, we intersected these genes with pathways from the KEGG ((Kyoto Encyclopedia of Genes and Genomes) database, to choose pathways, that contain genes of interest. 
-Selected pathways were processed using the KEGGgraph R package. We applied so called "breadth-first search", as we search for every "	descendant gene"  of every single gene in the pathway and compared the number of differentially expressed ones amoung them. Gene, that has the biggest omount of those genes (and the lesser number of non-differentially expressed descendants) is considered to be "the key gene", which initiate following changes in that part of the pathway. 
+Selected pathways were processed using the KEGGgraph R package. We applied so called "breadth-first search", as we search for every "	descendant gene"  of every single gene in the pathway and compared the number of differentially expressed ones amoung them. Gene, that has the biggest omount of those genes (and the lesser number of non-differentially expressed descendants) is considered to be "the key gene", that initiate following changes in that part of the pathway. 
 
 ### Data
 1) experiment.xlsx - table of differentially expressed genes (threshold: p_value < 0.05)

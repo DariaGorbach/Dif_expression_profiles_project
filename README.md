@@ -36,7 +36,9 @@ Diff_expression_script.Rmd - script for differential expression data analysis, u
  
 ![](https://github.com/DariaGorbach/Dif_expression_profiles_project/blob/master/Result_Rplot.png?raw=true)
 
-## Conclusion and future aims
+## Future aims
+ - optimize working function: mind secondary metabolites, cyclic pathways, several possible key genes within one pathway "chain" ( for example, 	disconnected by three or more non-differentially expressed genes)
+ - try to apply already working aihorithm on other viral infection cellular profiles                           
 
 
 ## Bibliography

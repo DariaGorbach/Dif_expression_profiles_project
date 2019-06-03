@@ -12,7 +12,7 @@ rm(list = ls(all.names = TRUE)) # Clear all memory
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r}
+```{r packages required}
 library(KEGGgraph)
 library(KEGG.db)
 library(KEGGREST)
@@ -28,6 +28,7 @@ data(kegg.gs.dise)
 ```
 
 ```{r}
+# main function that finds all descendants for each gene 
 gene_iterator_forward <- function(goal_gene, 
                                   unique_symbol_names,
                                   forward_edges_list,
@@ -53,16 +54,17 @@ gene_iterator_forward <- function(goal_gene,
     counter <- counter + 1
 
   }
-  all_children <- intersect(all_children, diff_expressed_gene_symb)
+  #intersection between all gene descendants and differentially expressed ones
+  all_children <- intersect(all_children, diff_expressed_gene_symb) 
   all_children <- union(all_children, goal_gene)
-  return (all_children)
+  return (all_children) #returns only differentially expressed descendants for each gene
 }
 
 ```
 
 
 ```{r}
-
+# the ability to choose between two datasets, depending on p_value
 diff_expressed <- read_excel("C:/Users/admin/Desktop/gse_16357_001.xlsx")
 diff_expressed <- diff_expressed$gse16357_entrez
 
@@ -77,15 +79,18 @@ diff_expressed <- diff_expressed[-grep("/+", diff_expressed)]
 
 
 ```{r}
-all_KEGG_pathways <- append(kegg.gs, kegg.gs.dise)
-list_intersected_genes <- lapply(all_KEGG_pathways, function(x) intersect(diff_expressed, x))
+all_KEGG_pathways <- append(kegg.gs, kegg.gs.dise) #browse pathways from KEGG database
+list_intersected_genes <- lapply(all_KEGG_pathways, function(x) intersect(diff_expressed, x)) #intersection between genes in datasets and pathway genes from prev step
 
-short_list <- list_intersected_genes[lengths(list_intersected_genes) >= 5]
-pathids <- substr(names(short_list), start=4, stop=8)
+short_list <- list_intersected_genes[lengths(list_intersected_genes) >= 5] #cutoff by min 5 genes in the pathway
+pathids <- substr(names(short_list), start=4, stop=8) #extracting IDs
 
-#very_short_list <- pathids[1:5]
-#very_short_list <- c('05200')
+#tests#####
+#very_short_list <- pathids[1:5] #pathways from first to fifth
+#very_short_list <- c('05200') #pathway with ID '05200'
+################
 
+#downloading pathways that contains genes from dataset
 graph_list <- lapply(pathids, function(hsa_name){
   mapkG <- try(
   {
@@ -98,12 +103,13 @@ graph_list <- lapply(pathids, function(hsa_name){
 })
 ok_graphs <- sapply(graph_list, function(x) typeof(x) == "S4")
 graph_list <- graph_list[ok_graphs]
-#mega_graph <- mergeKEGGgraphs(graph_list)
+#mega_graph <- mergeKEGGgraphs(graph_list) #merge all pathways in one big graph
 
 ```
 
 ```{r}
 
+#for each graph-pathway in megagraph: change hsa IDs to UniProt IDs (aka 'real names'), find all descendants for each gene in the given pathway, get the list of genes with the largest number of differentially expressed descendants             
 all_mega_ancestorz <- c()
 for (next_graph in graph_list){
   print(next_graph)
@@ -174,7 +180,7 @@ for (next_graph in graph_list){
 }
 #all_mega_ancestorz <- unique(all_mega_ancestorz)
 
-sort(table(all_mega_ancestorz))
+sort(table(all_mega_ancestorz)) #get the most abundant genes (within all pathways)
 ```
 
 

@@ -65,7 +65,8 @@ gene_iterator_forward <- function(goal_gene,
 
 ```{r}
 # the ability to choose between two datasets, depending on p_value
-diff_expressed <- read_excel("C:/Users/admin/Desktop/gse_16357_001.xlsx")
+# you can download tast dataframe and read it from your computer (with your own path)
+diff_expressed <- read_excel("C:/Users/admin/Desktop/gse_16357_001.xlsx") 
 diff_expressed <- diff_expressed$gse16357_entrez
 
 #diff_expressed <- read_excel("C:/Users/admin/Desktop/experiment.xlsx")
